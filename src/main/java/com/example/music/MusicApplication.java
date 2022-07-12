@@ -1,20 +1,17 @@
 package com.example.music;
 
-import org.bson.Document;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 
-@SpringBootApplication
 @EnableMongoRepositories
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class MusicApplication {
 
 	public static void main(String[] args) {
